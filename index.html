@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>K-CHARMS Jenang Kudus</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<!-- ANIMASI AOS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+<style>
+html {
+scroll-behavior: smooth;
+}
+
+body {
+margin: 0;
+font-family: 'Poppins', sans-serif;
+background: #1c1c1c;
+color: white;
+text-align: center;
+animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+header {
+padding: 60px 20px;
+background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+url('jenang.jpg');
+background-size: cover;
+}
+
+.logo {
+width: 140px;
+border-radius: 20px;
+margin-bottom: 20px;
+}
+
+h1 {
+font-size: 42px;
+color: #ffd54f;
+}
+
+.tagline {
+font-size: 18px;
+color: #ffcc80;
+}
+
+section {
+padding: 50px 20px;
+}
+
+.cards {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.card {
+background: rgba(255,255,255,0.08);
+backdrop-filter: blur(10px);
+padding: 20px;
+border-radius: 20px;
+width: 260px;
+transition: 0.3s;
+}
+
+.card:hover {
+transform: scale(1.05) rotate(1deg);
+}
+
+.gallery img {
+width: 200px;
+border-radius: 12px;
+margin: 10px;
+}
+
+footer {
+background: black;
+padding: 20px;
+margin-top: 20px;
+color: #bbb;
+}
+
+/* BUTTON MUSIK */
+#musicBtn {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background: linear-gradient(45deg, gold, orange);
+border: none;
+padding: 12px 20px;
+border-radius: 30px;
+font-weight: bold;
+cursor: pointer;
+box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<img src="logo.png" class="logo" data-aos="fade-down">
+
+<h1 data-aos="fade-up">K-CHARMS</h1>
+<p class="tagline" data-aos="fade-up">
+Jenang Kudus: Ikatan Budaya dalam Karya
+</p>
+</header>
+
+<!-- INFO -->
+<section>
+<h2 data-aos="fade-up">Tentang Jenang Kudus</h2>
+
+<div class="cards">
+<div class="card" data-aos="zoom-in">
+<h3>Sejarah</h3>
+<p>Jenang Kudus merupakan makanan tradisional khas Kudus yang telah ada sejak lama.</p>
+</div>
+
+<div class="card" data-aos="zoom-in">
+<h3>Makna</h3>
+<p>Melambangkan kebersamaan, kehangatan, dan nilai budaya lokal.</p>
+</div>
+
+<div class="card" data-aos="zoom-in">
+<h3>Budaya Kudus</h3>
+<p>Menjadi ikon kuliner yang selalu hadir dalam tradisi masyarakat.</p>
+</div>
+</div>
+</section>
+
+<!-- GALERI -->
+<section>
+<h2 data-aos="fade-up">Galeri K-CHARMS</h2>
+
+<div class="gallery">
+<img src="jenang.jpg" data-aos="zoom-in">
+<img src="proses.jpg" data-aos="zoom-in">
+</div>
+</section>
+
+<!-- QR -->
+<section>
+<h2 data-aos="fade-up">Scan QR</h2>
+<p data-aos="fade-up">Eksplorasi budaya digital K-CHARMS</p>
+<img src="qr.png" width="150" data-aos="zoom-in">
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© K-CHARMS | Budaya Kudus</p>
+</footer>
+
+<!-- AUDIO -->
+<audio id="bg-music" loop>
+<source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BUTTON MUSIK -->
+<button onclick="toggleMusic()" id="musicBtn">
+▶️ Musik
+</button>
+
+<!-- SCRIPT -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({
+duration: 1000
+});
+
+let isPlaying = false;
+const music = document.getElementById("bg-music");
+const btn = document.getElementById("musicBtn");
+
+music.volume = 0.3;
+
+function toggleMusic() {
+if (!isPlaying) {
+music.play();
+btn.innerText = "⏸️ Pause";
+} else {
+music.pause();
+btn.innerText = "▶️ Musik";
+}
+isPlaying = !isPlaying;
+}
+</script>
+
+</body>
+</html>
